@@ -1,0 +1,10 @@
+export const COMMON_ALIGNMENT = ['start', 'end', 'center'];
+export const FLEX_OPTIONS = ['fill', 'contain'];
+export const WRAP_OPTIONS = ['nowrap', 'forward', 'backward'];
+export const OVERFLOW_OPTIONS = ['visible', 'hidden', 'scroll', 'auto'];
+export const WRAPPED_BY_OPTIONS = ['browser', 'pane', 'window', 'layout', 'grid-item'];
+export const HEADER_FOR_OPTIONS = ['pane', 'window'];
+export const LAYOUT_HORIZONTAL = 'horizontal'; // rows
+export const LAYOUT_VERTICAL = 'vertical'; // columns
+export const PANE_OPTIONS = [LAYOUT_HORIZONTAL, LAYOUT_VERTICAL];
+export const NUM_PADDINGS = 3;

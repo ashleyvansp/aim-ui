@@ -1,0 +1,1326 @@
+@charset "utf-8";
+@use "sass:map";
+@use "sass:list";
+@use "sass:color";
+
+// SASS style sheet */
+// Palette color codes */
+// Palette URL: http://paletton.com/#uid=63J0t0kEf++XQp-+wDCoi+vgpZe */
+// As hex codes */
+
+/** primary color **/
+
+$blue-saturated: #1262FF;
+$blue-dark: #012F88;
+$blue-mid: #0041C1;
+$blue-light: #508BFE;
+$blue-lighter: #87AEFA;
+$blue-lightest: rgb(179, 203, 255);
+
+/** secondary color **/
+
+$violet-darker: #1D028D;
+$violet-dark: #2700C5;
+$violet-mid: #4416FF;
+$violet-light: #7654FE;
+$violet-lighter: #A08AFB;
+$violet-lightest: rgb(207, 195, 255);
+
+/** tertiary color **/
+
+$turquoise-darker: #007C77;
+$turquoise-dark: #00B6AF;
+$turquoise-mid: #00FFF5;
+$turquoise-light: #3DFDF6;
+$turquoise-lighter: #7AF9F5;
+
+/** complementary color **/
+
+$yellow-dark: #CC8500;
+$yellow-mid: #FFA700;
+$yellow-light: #FFBC3D;
+$yellow-lighter: #FFD27C;
+
+// Blue Grey
+// Palette URL: https://paletton.com/#uid=13z0u0kg2bea7lnbDfxkY9mq96z
+$bluegrey-darker: #081622;
+$bluegrey-dark: #132230;
+$bluegrey-mid: #1F2D3A;
+$bluegrey-light: #354350;
+$bluegrey-lighter: #4E5F6E;
+
+// Gray scale color codes */
+// Palette URL: http://paletton.com/#uid=63J0t0k00m42y4V0ecG01w300++ */
+// As hex codes */
+
+$gray-darkest: #18191A;
+$gray-dark: #434343;
+$gray-mid: #757575;	// Main Primary color */
+$gray-light: #AAAAAA;
+$gray-lightest: rgb(236, 236, 236);
+
+/** Material Design colors **/
+
+// http://mcg.mbitson.com/#!?mcgpalette0=%230041c1
+$blue: (
+    50 : #e0e8f8,
+    100 : #b3c6ec,
+    200 : #80a0e0,
+    300 : #4d7ad4,
+    400 : #265eca,
+    500 : #0041c1,
+    600 : #003bbb,
+    700 : #0032b3,
+    800 : #002aab,
+    900 : #001c9e,
+    A100 : #c9cfff,
+    A200 : #96a1ff,
+    A400 : #6374ff,
+    A700 : #495dff
+);
+
+$violet: (
+    50 : #eae7f5,
+    100 : #cbc4e5,
+    200 : #a89dd4,
+    300 : #8575c3,
+    400 : #6a58b6,
+    500 : #503aa9,
+    600 : #4934a2,
+    700 : #402c98,
+    800 : #37258f,
+    900 : #27187e,
+    A100 : #bfb7ff,
+    A200 : #9384ff,
+    A400 : #6651ff,
+    A700 : #4f37ff,
+);
+
+$gray: (
+    50: #FAFAFA,
+    100: #F5F5F5,
+    200: #EEEEEE,
+    300: #E0E0E0,
+    400: #BDBDBD,
+    500: #9E9E9E,
+    600: #757575,
+    700: #616161,
+    800: #424242,
+    900: #212121
+);
+
+$bluegray: (
+    50: #ECEFF1,
+    100: #CFD8DC,
+    200: #B0BEC5,
+    300: #90A4AE,
+    400: #78909C,
+    500: #607D8B,
+    600: #546E7A,
+    700: #455A64,
+    800: #37474F,
+    900: #263238
+);
+
+$fonts: (
+    dark: (
+        emphasis: (
+            color: map-get($bluegray, 50)
+        ),
+        regular: (
+            color: map-get($bluegray, 100)
+        ),
+        muted: (
+            color: map-get($bluegray, 200)
+        ),
+    ),
+    light: (
+        emphasis: (
+            color: $bluegrey-dark
+        ),
+        regular: (
+            color: $bluegrey-mid
+        ),
+        muted: (
+            color: $bluegrey-light
+        ),
+    )
+);
+
+/***************************/
+/**   Surface Elevation   **/
+/***************************/
+
+$elevations: (
+    dark: (
+        dp00: (
+            bg-color: #121212
+        ),
+        dp01: (
+            bg-color: #1d1d1d
+        ),
+        dp02: (
+            bg-color: #222222
+        ),
+        dp03: (
+            bg-color: #242424
+        ),
+        dp04: (
+            bg-color: #272727
+        ),
+        dp06: (
+            bg-color: #2c2c2c
+        ),
+        dp08: (
+            bg-color: #2d2d2d
+        ),
+        dp12: (
+            bg-color: #323232
+        ),
+        dp16: (
+            bg-color: #353535
+        ),
+        dp24: (
+            bg-color: #373737
+        )
+    ),
+    light: (
+        dp00: (
+            bg-color: white
+        ),
+        dp01: (
+            bg-color: white
+        ),
+        dp02: (
+            bg-color: white
+        ),
+        dp03: (
+            bg-color: white
+        ),
+        dp04: (
+            bg-color: white
+        ),
+        dp06: (
+            bg-color: white
+        ),
+        dp08: (
+            bg-color: white
+        ),
+        dp12: (
+            bg-color: white
+        ),
+        dp16: (
+            bg-color: white
+        ),
+        dp24: (
+            bg-color: white
+        )
+    )
+);
+
+/***************************/
+/**       Styling         **/
+/***************************/
+
+$btn-border: 1px solid black;
+$box-border: 1px solid $blue-dark;
+$divider-border: 1px solid $blue-mid;
+$box-radius: 4px;
+$btn-radius: 5px;
+
+/*************************/
+/**       Spacing       **/
+/*************************/
+
+$spacer: 0.2rem !default;
+$paddings: (
+    0: (
+        vertical: 0,
+        horizontal: 0
+    ),
+    1: (
+        vertical: $spacer * 1.5,
+        horizontal: $spacer
+    ),
+    2: (
+        vertical: $spacer * 2.5,
+        horizontal: $spacer * 2
+    ),
+    3: (
+        vertical: $spacer * 3.5,
+        horizontal: $spacer * 3
+    )
+) !default;
+
+/****************/
+/**   Mixins   **/
+/****************/
+
+@function get-font-color($scheme, $type: regular) {
+    @return map-get(map-get(map-get($fonts, $scheme), $type), color);
+}
+
+@function get-elevation-bg-color($scheme, $dp) {
+    @return map-get(map-get(map-get($elevations, $scheme), $dp), bg-color);
+}
+
+@function generate-wd-bg-image($scheme: dark) {
+    $my-elevations: map-get($elevations, $scheme);
+    $color1: get-elevation-bg-color($scheme, dp04);
+    @if $scheme == dark {
+        $color2: $color1;
+        @return linear-gradient($color1, 
+            rgba($color1, 0.95),
+            rgba($color2, 0.6), 
+            rgba($color2, 0.6), 
+            rgba($color2, 0.6));
+    } @else {
+        $color2: $gray-lightest;
+        @return linear-gradient($color1, 
+            rgba($color1, 0.95),
+            rgba($color2, 0.6), 
+            rgba($color2, 0.6), 
+            rgba($color2, 0.6));
+    }
+}
+
+@function generate-pane-resizer-bg-image($scheme: dark) {
+    @if $scheme == dark {
+        @return (
+            bg-image: repeating-linear-gradient(60deg,
+                transparent,
+                transparent 10px, 
+                $blue-dark 10px, 
+                $blue-dark 20px),
+            bg-color: none
+        );
+    } @else {
+        @return (
+            bg-image: none,
+            bg-color: $gray-lightest
+        );
+    }
+}
+
+@function generate-style-map($scheme: dark) {
+    $my-elevations: map-get($elevations, $scheme);
+    $style-map: (
+        wd: (
+            bg-image: generate-wd-bg-image($scheme)
+        ),
+        pane: (
+            bg-color: get-elevation-bg-color($scheme, dp03)
+        ),
+        toolbar: (
+            bg-color: get-elevation-bg-color($scheme, dp06)
+        ),
+        pane-resizer: generate-pane-resizer-bg-image($scheme),
+    );
+    @if $scheme == dark {
+        $style-map: map-merge($style-map, (
+            pane-section: (
+                bg-color: get-elevation-bg-color($scheme, dp12)
+            ),
+            wd-section: (
+                bg-color: rgba(get-elevation-bg-color($scheme, dp12), 0.7)
+            ),
+            section-section: (
+                bg-color: get-elevation-bg-color($scheme, dp24)
+            ),
+            nav: (
+                bg-color: get-elevation-bg-color($scheme, dp00)
+            ),
+            nav-link: (
+                bg-color: get-elevation-bg-color($scheme, dp01)
+            ),
+            nav-link-hover: (
+                bg-color: get-elevation-bg-color($scheme, dp02)
+            ),
+            btn: (
+                bg-color: map-get($blue, 400),
+                color: get-font-color(dark)
+            ),
+            btn-hover: (
+                bg-color: map-get($blue, 200),
+                color: get-font-color(light)
+            ),
+            btn-active: (
+                bg-color: map-get($blue, 100),
+                color: get-font-color(light)
+            ),
+            sg-btn: (
+                bg-color: map-get($violet, 400),
+                color: get-font-color(dark)
+            ),
+            sg-btn-hover: (
+                bg-color: map-get($violet, 200),
+                color: get-font-color(light)
+            ),
+            sg-btn-active: (
+                bg-color: map-get($violet, 100),
+                color: get-font-color(light)
+            ),
+            grid-btn: (
+                color: get-font-color(light),
+            ),
+        ));
+    } @else {
+        $style-map: map-merge($style-map, (
+            pane-section: (
+                bg-color: $blue-lighter
+            ),
+            wd-section: (
+                bg-color: rgba($blue-lighter, 0.7)
+            ),
+            section-section: (
+                bg-color: $blue-lightest
+            ),
+            nav: (
+                bg-color: $yellow-lighter
+            ),
+            nav-link: (
+                bg-color: $yellow-light
+            ),
+            nav-link-hover: (
+                bg-color: $yellow-mid
+            ),
+            btn: (
+                bg-color: $gray-lightest,
+                color: get-font-color(light),
+            ),
+            btn-hover: (
+                bg-color: map-get($blue, 300),
+                color: get-font-color(dark),
+            ),
+            btn-active: (
+                bg-color: map-get($blue, 400),
+                color: get-font-color(dark),
+            ),
+            sg-btn: (
+                bg-color: map-get($violet, 100),
+                color: get-font-color(light),
+            ),
+            sg-btn-hover: (
+                bg-color: map-get($violet, 300),
+                color: get-font-color(dark),
+            ),
+            sg-btn-active: (
+                bg-color: map-get($violet, 400),
+                color: get-font-color(dark),
+            ),
+            grid-btn: (
+                color: get-font-color(light),
+            ),
+        ));
+    }
+    @return $style-map;
+}
+
+@mixin generate-borders($scheme: dark) {
+    @if $scheme == dark {
+        .btn-border-first-child {
+        }
+        .btn-border-not-last-child {
+            border: none;
+            margin-right: 1px;
+        }
+        .btn-border-last-child {
+            border: none;
+        }
+    } @else {
+        $btn-border: 1px solid black;
+        .btn-border-not-last-child {
+            border: $btn-border {
+                right: none;
+            }
+            margin-right: 0;
+        }
+        .btn-border-last-child {
+            border: $btn-border;
+        }
+    }
+}
+
+@mixin generate-variables($scheme: dark) {
+    @each $dp-key, $dp-styling in map-get($elevations, $scheme) {
+        --#{$dp-key}-bg-color: #{map-get($dp-styling, bg-color)};
+    }
+    @each $ft-key, $ft-styling in map-get($fonts, $scheme) {
+        --#{$ft-key}-ft-color: #{map-get($ft-styling, color)};
+    }
+    @each $part-key, $values in generate-style-map($scheme) {
+        @each $prop-key, $value in $values {
+            --#{$part-key}-#{$prop-key}: #{$value};
+        }
+    }
+    @include generate-borders($scheme);
+}
+
+:root {
+    @include generate-variables(dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    @include generate-variables(dark);
+}
+
+@media (prefers-color-scheme: light) {
+    @include generate-variables(light);
+    
+}
+
+body[data-theme="dark"] {
+    @include generate-variables(dark);
+}
+
+body[data-theme="light"] {
+    @include generate-variables(light);
+}
+
+@mixin text-regular {
+    color: var(--regular-ft-color);
+    font-weight: 400;
+}
+
+@mixin text-emphasis {
+    color: var(--emphasis-ft-color);
+}
+
+@mixin text-muted {
+    color: var(--muted-ft-color);
+}
+
+@mixin active-tab {
+    @include text-emphasis;
+    font-weight: 500;
+}
+
+@mixin text-header {
+    @include text-emphasis;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@mixin text-description {
+    font-weight: 500;
+}
+
+@mixin text-footer {
+    @include text-muted;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+@mixin text-button {
+    @include text-emphasis;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+@mixin text-badge {
+    font-size: 10px;
+}
+
+body {
+    @include text-regular;
+    background-color: var(--dp00-bg-color);
+    // TEST
+    // background-color: red;
+    font-family: "Lato";
+    font-style: normal;
+    font-size: 14px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* flex container does not wrap items */
+/* default */
+$flex-wrap-options: (
+    none: nowrap,
+    /* flex container wraps items */
+    forward: wrap,
+    /* flex container wraps items and reverses cross-start and cross-end */
+    backward: wrap-reverse
+);
+
+@each $key, $value in $flex-wrap-options {
+    .flex-wrap-#{$key} {
+        flex-wrap: $value;
+    }
+}
+
+$justify-content-options: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around
+);
+@each $key, $value in $justify-content-options {
+    .justify-content-#{$key} {
+        justify-content: $value;
+    }
+}
+
+.align-items-start {
+align-items: flex-start;
+}
+
+.align-items-end {
+align-items: flex-end;
+}
+
+.align-items-center {
+align-items: center;
+}
+
+.align-items-baseline {
+align-items: baseline;
+}
+
+.align-items-stretch {
+align-items: stretch;
+}
+
+.align-content-start {
+align-content: flex-start;
+}
+
+.align-content-end {
+align-content: flex-end;
+}
+
+.align-content-center {
+align-content: center;
+}
+
+.align-content-between {
+align-content: space-between;
+}
+
+.align-content-around {
+align-content: space-around;
+}
+
+.align-content-stretch {
+align-content: stretch;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+button {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+}
+
+/**********************************/
+/** AimCollapse                  **/
+/**********************************/
+
+$transition-collapse-timing: 0.3s;
+$transition-collapse-height: height $transition-collapse-timing ease;
+$transition-collapse-width: width $transition-collapse-timing ease;
+
+.collapse {
+    &:not(.show) {
+        display: none;
+    }
+}
+
+.collapsing-horizontal {
+    width: 0;
+    overflow: hidden;
+    transition: $transition-collapse-width;
+}
+
+.collapsing-vertical {
+    height: 0;
+    overflow: hidden;
+    transition: $transition-collapse-height;
+}
+
+/*************************************/
+/** AimRow, AimCol                  **/
+/*************************************/
+
+/* flex item fills it's container along main axis */
+@mixin flex-item-fill {
+    flex: 1 1 0;
+}
+
+/* flex item shrink's to it's content along main axis */
+@mixin flex-item-contain {
+    flex: 0 1;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* row-like has flex */
+%flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* col-like has flex */
+%flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    &.flex {
+        @extend %flex-row;
+    }
+}
+
+.col {
+    &.flex {
+        @extend %flex-col;
+    }
+}
+
+/**
+ * Scrolling should be managed by AimContainer 
+ */
+.row, .col {
+    &.flex-item-fill {
+        @include flex-item-fill;
+    }
+
+    &.flex-item-contain {
+        @include flex-item-contain;
+    }
+}
+
+/**********************/
+/**   AimContainer   **/
+/**********************/
+
+%section-abstract {
+    border-left: 2px solid $blue-mid;
+    border-radius: $box-radius;
+}
+ 
+.container.wrapped-by-pane %section-abstract {
+    background-color: var(--pane-section-bg-color);
+}
+
+.container.wrapped-by-window %section-abstract {
+    background-color: var(--wd-section-bg-color);
+}
+
+%section-abstract %section-abstract {
+    background-color: var(--section-section-bg-color);
+}
+
+.container.flex {
+    @extend %flex-col;
+}
+
+@function pad-infix($pad-key) {
+    @return -#{$pad-key};
+}
+
+@each $pad-key, $pad-amt in $paddings {
+    $infix: pad-infix($pad-key);
+    .container.pad#{$infix} {
+        padding-top: map-get($pad-amt, vertical);
+
+        > .spacer {
+            height: 0;
+            margin-bottom: map-get($pad-amt, vertical);
+        }
+
+        > .section {
+            @extend %section-abstract;
+            display: block;
+            padding-bottom: 1px;
+            margin: 0px map-get($pad-amt, horizontal) map-get($pad-amt, vertical);
+            padding-top: map-get($pad-amt, vertical);
+        }
+    }
+
+    .container.pad#{$infix} > .section {
+        > .divider {
+            height: 0;
+            border-top: $divider-border;
+            margin-bottom: map-get($pad-amt, vertical);
+        }
+        
+        > .section-item {
+            display: block;
+            margin: 0px map-get($pad-amt, horizontal) map-get($pad-amt, vertical);
+        }
+    }
+}
+
+.container {
+    &.wrapped-by-browser {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden; 
+        // TESTING
+        // overflow: scroll;      
+    }
+    
+    &.wrapped-by-window {
+        position: absolute;
+        overflow: hidden;
+    }
+    
+    &.wrapped-by-pane {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &.wrapped-by-grid-item {
+        height: 100%;
+        width: 100%;
+    }
+
+    &.wrapped-by-layout {
+        // height: 100%;
+        // width: 100%;
+        overflow: hidden;
+    }
+}
+
+.container.wrapped-by-pane {
+    background-color: var(--pane-bg-color);
+}
+
+.container.wrapped-by-window {
+    background-image: var(--wd-bg-image);
+    border: $box-border;
+    border-radius: $box-radius;
+}
+
+/*******************/
+/**    AimGrid    **/
+/*******************/
+
+.grid {
+    display: grid;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.grid-item.col-span {
+    grid-column: col-start / col-end;
+}
+
+.grid-item > .grid-btn {
+    @extend %flex-row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--grid-btn-color);
+
+    border: {
+        top: $btn-border;
+        bottom: $btn-border;
+    }
+    
+    &.begin {
+        border-left: $btn-border;
+        border-top-left-radius: $box-radius;
+        border-bottom-left-radius: $box-radius;
+    }
+
+    &.end {
+        border-right: $btn-border;
+        border-top-right-radius: $box-radius;
+        border-bottom-right-radius: $box-radius;
+    }
+    
+    &.icon {
+        justify-content: center;
+    }
+}
+
+.grid > .grid-item > .grid-btn {
+    > .content {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    > .badge {
+        @include text-badge;
+    }
+}
+
+@each $pad-key, $pad-amt in $paddings {
+    $infix: pad-infix($pad-key);
+    .grid.pad#{$infix} > .grid-item > .grid-btn {
+        &:not(.icon) {
+            padding: 0 map-get($pad-amt, horizontal);
+        }
+        min-height: 2*map-get($pad-amt, vertical) + 1rem;
+        margin: map-get($pad-amt, vertical) 0;
+    }
+
+    .grid.pad#{$infix} > .grid-item > .grid-btn {
+        > .spacing {
+            width: map-get($pad-amt, horizontal);
+        }
+
+        > .badge {
+            margin: inherit map-get($pad-amt, horizontal);
+            padding: inherit map-get($pad-amt, horizontal);
+        }
+    }
+}
+
+/******************/
+/**    AimNav    **/
+/******************/
+
+.nav {
+    @extend %flex-row;
+    @include flex-item-contain;
+    @include text-muted;
+    background-color: var(--nav-bg-color);
+    padding-left: 0;
+    padding-top: 3px;
+    margin: 0;
+    list-style: none;
+
+    .nav-link {
+        display: block;
+        background: var(--nav-link-bg-color);
+        margin-left: 3px;
+        padding: 3px 5px;
+        border-top-left-radius: $box-radius;
+        border-top-right-radius: $box-radius;
+        // hotfix for nav gaps
+        position: relative;
+        top: 2px;
+
+        &:hover, &:focus {
+            background: var(--nav-link-hover-bg-color);
+        }
+
+        &:active, &.active {
+            // background: white;
+            @include text-emphasis;
+            border-top: 2px solid $blue-mid;
+            top: 0px;
+            
+        }
+    }
+}
+
+.container.wrapped-by-pane .nav-link {
+    &:active, &.active {
+        background-color: var(--pane-bg-color);
+    }
+}
+
+.container.wrapped-by-window .nav-link {
+    &:active, &.active {
+        background-color: var(--dp04-bg-color);
+    }
+}
+
+/*******************/
+/**    AimTabs    **/
+/*******************/
+
+.tabs {
+    @extend %flex-col;
+    height: 100%;
+    overflow: hidden;
+}
+
+/**
+ * The last 6% of the height overflows.
+ */
+.tab-content {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.tab-pane {
+    // height: 100%;
+    // overflow: scroll;
+}
+
+/********************/
+/**    AimTable    **/
+/********************/
+
+.content.singleline {
+    white-space: nowrap;
+}
+
+.multicontent {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    border-top: $divider-border;
+}
+
+@each $pad-key, $pad-amt in $paddings {
+    $infix: pad-infix($pad-key);
+    table.pad#{$infix} {
+        td {
+            padding: {
+                top: map-get($pad-amt, vertical);
+                right: 0;
+                bottom: map-get($pad-amt, vertical);
+                left: map-get($pad-amt, horizontal);
+            }
+        }
+
+        td > .multicontent.image {
+            margin-left: -map-get($pad-amt, horizontal);
+        }
+
+        td > .multicontent > .spacing {
+            width: map-get($pad-amt, horizontal);
+        }
+    }
+}
+
+/*******************/
+/**    AimList    **/
+/*******************/
+
+@each $pad-key, $pad-amt in $paddings {
+    $infix: pad-infix($pad-key);
+    .container.pad#{$infix} > .list > .list-item {
+        @extend %section-abstract;
+        margin: 0px map-get($pad-amt, horizontal) map-get($pad-amt, vertical);
+        padding: map-get($pad-amt, vertical) map-get($pad-amt, horizontal);
+    }
+}
+
+.list {
+    display: block;
+
+    > .list-item {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        > img {
+            flex: 0 0 auto;
+        }
+
+        > .spacing {
+            flex: 0 0 6px;
+        }
+    }
+}
+
+.list > .list-item > .content {
+    flex: 1 1 auto;
+
+    > .header {
+        display: block;
+        @include text-header;
+    }
+
+    .description {
+        @include text-description;
+    }
+
+    > .footer {
+        display: block;
+        @include text-footer;
+    }
+}
+
+img.avatar,
+svg.avatar {
+    width: auto;
+    height: 32px;
+    align-self: flex-start;
+}
+
+/*******************/
+/**    AimBadge   **/
+/*******************/
+
+.badge {
+    background-color: $blue-saturated;
+    color: white;
+    border-radius: $btn-radius;
+    padding: 0.2rem;
+}
+
+/*******************/
+/**    AimWindow  **/
+/*******************/
+
+.draggable-handle {
+    cursor: move;
+}
+  
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+    transform: scale(0.9);
+}
+  
+.fade-enter-active,
+.fade-leave-active {
+    transition: 0.2s;
+}
+
+/*******************/
+/**    AimButton  **/
+/*******************/
+
+.btn {
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-color);
+    padding: 0.2rem 0.5rem;
+
+    &:hover {
+        background-color: var(--btn-hover-bg-color);
+        color: var(--btn-hover-color);
+    }
+
+    &:active, &.active {
+        background-color: var(--btn-active-bg-color);
+        color: var(--btn-active-color);
+    }
+}
+
+.btn:first-child {
+    @extend .btn-border-first-child !optional;
+}
+
+.btn:not(:last-child):not(.btn-add-border) {
+    @extend .btn-border-not-last-child;
+}
+
+.btn-add-border, .btn:last-child {
+    @extend .btn-border-last-child;
+}
+
+.btn-group,
+.btn-group-vertical {
+    @include text-button;
+    position: relative;
+    display: inline-flex;
+
+    > .btn {
+        position: relative;
+        flex: 1 0 auto;
+    }
+}
+
+.btn-group.btn-subgroup > .btn {
+    background-color: var(--sg-btn-bg-color);
+    color: var(--sg-btn-color);
+    
+    &:hover {
+        background-color: var(--sg-btn-hover-bg-color);
+        color: var(--sg-btn-hover-color);
+    }
+
+    &:active, &.active {
+        background-color: var(--sg-btn-active-bg-color);
+        color: var(--sg-btn-active-color);
+    }
+}
+
+.expand-btn-wrapper {
+    @extend %flex-row;
+}
+
+.collapse-wrapper > .btn-group {
+    width: 100%;
+    height: 100%;
+}
+
+/*******************/
+/**    AimPane    **/
+/*******************/
+
+.pane-resizer {
+    display: block;
+    position: relative;
+    background-color: var(--pane-resizer-bg-color);
+    background-image: var(--pane-resizer-bg-image);
+}
+
+.multipane {
+    flex: 1 1 0;
+    display: flex;
+    
+    &.layout-horizontal {
+        flex-direction: column;
+    }
+
+    &.layout-vertical {
+        flex-direction: row;
+    }
+}
+
+.multipane > div {
+    position: relative;
+}
+
+.pane-wrapper {
+    &.collapsed {
+        background: $blue-dark;
+    }
+}
+
+.layout-horizontal {
+    > .pane-wrapper, > .pane-resizer:not(.hide) {
+        border-top: $box-border;
+        border-right: $box-border;
+        border-left: $box-border;
+    }
+
+    > .pane-wrapper:not(:last-child), > .pane-resizer:not(.hide):not(:last-child) {
+        border-bottom: none;
+    }
+
+    > .pane-wrapper:last-child, > .pane-resizer:not(.hide):last-child {
+        border-bottom: $box-border;
+    }
+}
+
+.layout-vertical {
+    > .pane-wrapper, > .pane-resizer:not(.hide) {
+        border-top: $box-border;
+        border-bottom: $box-border;
+        border-left: $box-border;
+    }
+
+    > .pane-wrapper:not(:last-child), > .pane-resizer:not(.hide):not(:last-child) {
+        border-right: none;
+    }
+
+    > .pane-wrapper:last-child, > .pane-resizer:not(.hide):last-child {
+        border-right: $box-border;
+    }
+}
+
+.layout-horizontal > .pane-resizer {
+    width: 100%;
+    height: 3px;
+    cursor: row-resize;
+
+    &.hide {
+        height: 0;
+    }
+}
+
+.layout-vertical > .pane-resizer {
+    width: 3px;
+    height: 100%;
+    cursor: col-resize;
+
+    &.hide {
+        width: 0;
+    }
+}
+
+/*************************/
+/**    AimHeaderbar     **/
+/*************************/
+
+.headerbar {
+    @extend %flex-row;
+    @include flex-item-contain;
+    background: $blue-dark;
+    color: white;
+    margin-left: -1px;
+    margin-right: -1px;
+
+    &.header-for-window {
+        border-top-left-radius: $box-radius;
+        border-top-right-radius: $box-radius;
+    }
+
+    &.header-for-pane {
+        
+    }
+
+    > .title {
+        @extend %flex-row;
+        /* top | right | bottom | left */
+        margin: 0 auto 0 0.2rem;
+        padding: 0.2rem 0;
+        align-items: end;
+    }
+
+    > .actions {
+        @extend %flex-row;
+        margin: 0 0.5rem 0 auto;
+        padding: 0.2rem 0;
+    }
+}
+
+/***********************/
+/**    AimToolbar     **/
+/***********************/
+
+.toolbar {
+    @include flex-row;
+    @include flex-item-contain;
+    background-color: var(--toolbar-bg-color);
+    border-bottom: 1px solid black;
+    margin-bottom: -1px;
+
+    > .item {
+        @extend %flex-row;
+        padding: 0.2rem 0;
+    }
+
+    > .divider {
+        height: 100%;
+        margin-right: 0.3rem;
+    }
+
+    > .logo {
+        display: flex;
+        justify-content: center;
+        margin: 0 1rem;
+    } 
+}
+
+.toolbar > .logo > img,
+.toolbar > .logo > svg {
+    display: block;
+    margin: auto;
+    max-height: 1.75rem;
+}

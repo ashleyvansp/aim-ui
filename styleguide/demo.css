@@ -1,0 +1,40 @@
+
+.pad {
+    padding: 0 0.5cm;
+    line-height: 1.5rem;
+    white-space: nowrap;
+}
+
+.blue {
+    background: lightblue;
+    border: 1px solid blue;
+    color: black;
+    height: 100%;
+}
+
+.red {
+    background: lightcoral;
+    border: 1px solid red;
+    color: black;
+    height: 100%;
+}
+
+.purple {
+    background: plum;
+    border: 1px solid purple;
+    color: black;
+    height: 100%;
+}
+
+.green {
+    background: greenyellow;
+    border: 1px solid green;
+    color: black;
+    height: 100%;
+}
+
+.demo {
+    border: 1px solid black;
+    color: black;
+    height: 100%;
+}
