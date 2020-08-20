@@ -7,7 +7,7 @@
     "build:js": "vue-cli-service build --target lib ./src/index.js",
     "build:scss": "node-sass --output-style expanded ./src/scss/aim.scss > ./dist/aim-ui.css",
     "build:lib": "npm run build:js && npm run build:scss",
-    "styleguide": "vue-styleguidist server",
+    "serve:styleguide": "vue-styleguidist server",
     "build:styleguide": "vue-styleguidist build"
   },
   "dependencies": {
