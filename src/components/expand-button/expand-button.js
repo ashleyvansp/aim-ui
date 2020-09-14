@@ -35,7 +35,7 @@ export default {
             return {
                 collapse: !this.transitioning,
                 show: this.show && !this.transitioning,
-            };;
+            };
         },
     },
     methods: {

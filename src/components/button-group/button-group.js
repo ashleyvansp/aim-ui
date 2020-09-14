@@ -27,6 +27,13 @@ export default {
         subgroup: {
             type: Boolean,
             default: false,
+        },
+        /**
+         * Whether this group is in a toolbar
+         */
+        toolbar: {
+            type: Boolean,
+            default: false
         }
     },
     render(h, { props, data, children }) {
@@ -36,6 +43,7 @@ export default {
                 staticClass: 'btn-group',
                 class: {
                     'btn-subgroup': props.subgroup,
+                    'btn-toolbar': props.toolbar,
                 },
                 attrs: { role: props.ariaRole }
             }),

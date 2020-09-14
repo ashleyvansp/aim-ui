@@ -360,6 +360,18 @@ $paddings: (
                 bg-color: map-get($violet, 100),
                 color: get-font-color(light)
             ),
+            tb-btn: (
+                bg-color: transparent,
+                color: get-font-color(dark)
+            ),
+            tb-btn-hover: (
+                bg-color: map-get($gray, 400),
+                color: get-font-color(light)
+            ),
+            tb-btn-active: (
+                bg-color: map-get($gray, 300),
+                color: get-font-color(light)
+            ),
             grid-btn: (
                 color: get-font-color(light),
             ),
@@ -1163,9 +1175,39 @@ svg.avatar {
     @extend %flex-row;
 }
 
+.btn-group.btn-toolbar > .expand-btn-wrapper > .btn {
+    background-color: var(--tb-btn-bg-color);
+    color: var(--tb-btn-color);
+    
+    &:hover {
+        background-color: var(--tb-btn-hover-bg-color);
+        color: var(--tb-btn-hover-color);
+    }
+
+    &:active, &.active {
+        background-color: var(--tb-btn-active-bg-color);
+        color: var(--tb-btn-active-color);
+    }
+}
+
 .collapse-wrapper > .btn-group {
     width: 100%;
     height: 100%;
+}
+
+.btn-group.btn-toolbar > .btn {
+    background-color: var(--tb-btn-bg-color);
+    color: var(--tb-btn-color);
+    
+    &:hover {
+        background-color: var(--tb-btn-hover-bg-color);
+        color: var(--tb-btn-hover-color);
+    }
+
+    &:active, &.active {
+        background-color: var(--tb-btn-active-bg-color);
+        color: var(--tb-btn-active-color);
+    }
 }
 
 /*******************/
